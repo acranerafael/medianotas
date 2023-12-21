@@ -1,4 +1,4 @@
-# Projeto medianotas
+# Projeto Calculadora medianotas
 
 Este é um projeto simples em C voltado para estudos da Linguagem C/C++
 
