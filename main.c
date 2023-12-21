@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void cls(void) {
-    #ifdef _WIN32 // Verifica se é Windows
+    #ifdef _WIN32 
         system("cls");
     #else
         system("clear");
