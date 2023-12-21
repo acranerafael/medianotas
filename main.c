@@ -2,6 +2,50 @@
 #include <locale.h>
 #include <stdlib.h>
 
+void cls(void);
+void limpaStdin(void);
+void menu(void);
+
+int main(){
+    setlocale(LC_ALL, "portuguese");
+
+    char op;
+
+    printf("Gostaria de iniciar a calculadora? (s/n) \n");
+    scanf("%c", &op);
+
+    do {
+
+        if (op == 's' || op == 'S') {
+            menu();
+
+            printf("Gostaria de refazer o cálculo? (s/n) \n");
+            scanf("%c", &op);
+
+        } else if (op == 'n' || op == 'N') {
+            cls();
+            printf("\n");
+            printf("****************************************\n");
+            printf("\t Calculadora encerrada!\n");
+            printf("****************************************\n");
+
+            op = 'x';
+        } else {
+            cls();
+            printf("****************************************\n");
+            printf("\t Valor inválido! \n");
+            printf("****************************************\n");
+            printf("\n");
+
+            printf("Digite apenas S ou N \n");
+            scanf("%c", &op);
+        }
+
+    } while(op != 'x');
+
+    return 0;
+}
+
 void cls(void) {
     #ifdef _WIN32
         system("cls");
@@ -10,12 +54,15 @@ void cls(void) {
     #endif
 }
 
-int main(){
+void limpaStdin(void) {
+    char c;
+    while ((c = getchar()) != '\n' && c != EOF) {}
+}
+
+void menu(void) {
 
     float nota, notafinal, soma;
     int i, n;
-
-    setlocale(LC_ALL, "portuguese");
 
     printf("Quantas notas serão cadastradas? \n");
     scanf("%d", &n);
@@ -45,6 +92,7 @@ int main(){
         printf("\t REPROVADO! \n");
     }
     printf("**********************************\n");
+    printf("\n");
 
-return 0;
+    limpaStdin();
 }
