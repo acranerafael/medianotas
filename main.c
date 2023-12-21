@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void cls(void) {
-    #ifdef _WIN32 
+    #ifdef _WIN32
         system("cls");
     #else
         system("clear");
@@ -12,19 +12,26 @@ void cls(void) {
 
 int main(){
 
-    float nota1, nota2, notafinal;
+    float nota, notafinal, soma;
+    int i, n;
 
     setlocale(LC_ALL, "portuguese");
 
-    cls();
+    printf("Quantas notas serão cadastradas? \n");
+    scanf("%d", &n);
+
     printf("Digite a primeira nota: \n");
-    scanf("%f", &nota1);
+    scanf("%f", &soma);
 
-    cls();
-    printf("Digite a segunda nota: \n");
-    scanf("%f", &nota2);
+    for (i = 2; i <= n; i++){
+        printf("\n");
+        printf("Digite outra nota: \n");
+        scanf("%f", &nota);
 
-    notafinal = (nota1 + nota2) / 2;
+        soma = soma + nota;
+    }
+
+    notafinal = soma / n;
 
     cls();
     printf("\n");
@@ -38,7 +45,6 @@ int main(){
         printf("\t REPROVADO! \n");
     }
     printf("**********************************\n");
-
 
 return 0;
 }
