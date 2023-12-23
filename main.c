@@ -19,22 +19,22 @@ int main(){
         if (op == 's' || op == 'S') {
             menu();
 
-            printf("Gostaria de refazer o c�lculo? (s/n) \n");
+            printf("Gostaria de refazer o cálculo? (s/n) \n");
             scanf("%c", &op);
 
         } else if (op == 'n' || op == 'N') {
             cls();
             printf("\n");
-            printf("****************************************\n");
+            printf("████████████████████████████████████████\n");
             printf("\t Calculadora encerrada!\n");
-            printf("****************************************\n");
+            printf("████████████████████████████████████████\n");
 
             op = 'x';
         } else {
             cls();
-            printf("****************************************\n");
-            printf("\t Valor inv�lido! \n");
-            printf("****************************************\n");
+            printf("████████████████████████████████████████\n");
+            printf("\t Valor inválido! \n");
+            printf("████████████████████████████████████████\n");
             printf("\n");
 
             printf("Digite apenas S ou N \n");
@@ -64,7 +64,7 @@ void menu(void) {
     float nota, notafinal, soma;
     int i, n;
 
-    printf("Quantas notas ser�o cadastradas? \n");
+    printf("Quantas notas serão cadastradas? \n");
     scanf("%d", &n);
 
     printf("Digite a primeira nota: \n");
